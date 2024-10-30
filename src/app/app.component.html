@@ -1,11 +1,13 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
+    <!-- Sidebar Menu -->
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi&#64;ionicframework.com</ion-note>
+          <ion-list-header>Dashboard</ion-list-header>
+          <ion-note>ayunq255&#64;gmail.com</ion-note>
 
+          
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
@@ -15,15 +17,51 @@
         </ion-list>
 
         <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
+          <ion-list-header>Kategori</ion-list-header>
           <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+            <ion-icon aria-hidden="true" slot="start" ios="pricetag-outline" md="pricetag-sharp"></ion-icon>
             <ion-label>{{ label }}</ion-label>
           </ion-item>
         </ion-list>
       </ion-content>
     </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
+
+    <!-- Main Content -->
+    <ion-content id="main-content" class="ion-padding">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Profil Mahasiswa</ion-card-title>
+          <ion-card-subtitle>Teknik Informatika</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-avatar class="ion-margin-bottom">
+            <img alt="Profile picture" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+          </ion-avatar>
+          
+          <ion-item>
+            <ion-label>
+              <h2>Nama: Qurrota A'yun</h2>
+              <h3>NIM: H1D022051</h3>
+            </ion-label>
+          </ion-item>
+
+          <ion-chip color="tertiary">
+            <ion-icon name="laptop-outline" slot="start"></ion-icon>
+            <ion-label>Mobile Developer</ion-label>
+          </ion-chip>
+
+          <ion-chip color="success">
+            <ion-icon name="code-slash-outline" slot="start"></ion-icon>
+            <ion-label>Web Enthusiast</ion-label>
+          </ion-chip>
+
+          <ion-button expand="full" color="primary" class="ion-margin-top">
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            Hubungi Saya
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-content>
   </ion-split-pane>
 </ion-app>
